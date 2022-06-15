@@ -17,7 +17,7 @@ int getMin() retrieves the minimum element in the stack.
 
 ## Solution Explanation
 
-* To understand and solve this problem you need to pretty much implement a min stack. A min stack pretty much is a regular stack except the min number in the stack is on the top. This one is tricky because you have to retrieve the min number in the stack in constant time which is O(1) time. The min function uses O(n) time because it's iterating over the stack. So the big takeaway with this is create another list called min stack in the init function of the class and append the min value between the current value being appended and the value at index[-1]. If the m 
+* To understand and solve this problem you need to pretty much implement a min stack. A min stack pretty much is a regular stack except the min number in the stack is on the top. This one is tricky because you have to retrieve the min number in the stack in constant time which is O(1) time. The min function uses O(n) time because it's iterating over the stack. So the big takeaway with this is create another list called min stack in the init function of the class. Append the min value and compare the current value being appended and the value at index[-1] of the minstack. If the minStack is empty it will just append the value to the min stack. Otherwise it will compare both values. For the function which says return min number you just return the number at index [-1] in the min stack.  
 
 ```python
 # Solution 1
