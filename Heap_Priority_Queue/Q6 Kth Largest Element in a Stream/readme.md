@@ -4,12 +4,12 @@
 
 ## Problem
 
-* Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+* Design a class to find the kth largest element in a stream. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
-An input string is valid if:
+Implement KthLargest class:
 
-Open brackets must be closed by the same type of brackets.
-Open brackets must be closed in the correct order.
+KthLargest(int k, int[] nums) Initializes the object with the integer k and the stream of integers nums.
+int add(int val) Appends the integer val to the stream and returns the element representing the kth largest element in the stream.
 
 
 ## Solution Explanation

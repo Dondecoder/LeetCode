@@ -22,6 +22,8 @@ class Solution:
         return res
 
 # BFS
+from collections import deque
+
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
         if not root:
