@@ -1,37 +1,29 @@
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
-# class Solution:
-#     def BalancedTree(self, head:TreeNode):
+class Solution:
+    def BalancedTree(self, head:TreeNode):
 
-#         def dfshelper(head):
-#             if head is None:
-#                 return [True, 0]
-#             left = dfshelper(head.left)
-#             right = dfshelper(head.right)
+        def dfshelper(head):
+            if head is None:
+                return [True, 0]
+            left = dfshelper(head.left)
+            right = dfshelper(head.right)
+            balanced = left[0] and right[0] and abs(left[1] - right[1]) <= 1
+
+            return [balanced, 1 + max(left[1], right[1])]
+
+        return dfshelper(head)[0]
 
             
-class Solution:
-    def search(self, nums: list[int], target: int) -> int:
-        return self.bfshelper(nums,target,start=0,end=(len(nums))- 1)
-    
-        
-    def bfshelper(self, nums, target, start, end):
-        start = 0
-        end = (len(nums)) - 1
-        while start < end:
-            mid = (start + end) // 2
-            if nums[mid] == target:
-                return mid
-            elif nums[mid] < target:
-                start = mid + 1
-            elif nums[mid] > target:
-                end = mid - 1
-        return -1
+Bin_tree = TreeNode(3)
+Bin_tree.left = TreeNode(9)
+Bin_tree.right = TreeNode(20)
+Bin_tree.right.left = TreeNode(15)
+Bin_tree.right.right = TreeNode(7)
 
-
-bs = Solution()
-bs.search([-1,0,3,5,9,12], 9)
+B_tree = Solution()
+B_tree.BalancedTree(Bin_tree)
